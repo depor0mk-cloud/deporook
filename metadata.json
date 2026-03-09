@@ -1,0 +1,5 @@
+{
+  "name": "Telegram Clan Game Bot",
+  "description": "A full-featured Telegram bot for managing clans, economy, and wars.",
+  "requestFramePermissions": []
+}

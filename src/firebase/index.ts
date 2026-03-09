@@ -1,0 +1,16 @@
+import admin from 'firebase-admin';
+
+const serviceAccount: admin.ServiceAccount = {
+  projectId: "boevik-1e8c3",
+  clientEmail: "firebase-adminsdk-fbsvc@boevik-1e8c3.iam.gserviceaccount.com",
+  privateKey: "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDOhqXZpqS6nb1T\nOeFEqo44AivSsmRChCrh11MZ9ofyaKqPJvHNeZRSiiFdjO8FvdqOxJnUz+dB0HSy\n6rUrx6+JuyInU3dh+fJPMulf8D83odnDV8oA8dvHLck6VMieKz45Wap4ypeqc6B+\nlnu3F9dAPl3Pmjzzb+nVS+c4vggSio6fd9DVua/fMiOVtC5cXUhjwst4pz1sieDf\n4eTRyjIlJg3b7JlbmRT44ssQYJltz4dVG2KtjKM5NtyU/R5OHjA8FefxTpr1zt0c\nDsZVITkd0KlZ9dDgN1t9D2Sk4WD1AnBSVWeoOdVEJD1gt4RALozRB6LFV1NNW50r\nnCNNcE2HAgMBAAECggeAKbZHRATky241gVw0084QyF4j5Lu0BT01fgSj26APyBV8\nsUn/12zBWMReRctDsWitfl1V5oYRIplMIKDH864ylYJOvRueBpNZbcaOHRrkYcOW\nPF58RaGTrpBgTqA2HsAEIsgp5pigdkRBO6AAH7Q4fNi70MTJn69QToy0iCDVd4zY\nQLmdk36/0EEA3gcg7uLQgQASAtzCqxGPDxNRgTfltQsi6mowNISMLwj6AwPrH4AS\nJNAlNXPIxII7mp2MeOb0mn9gXSrgzD8bSfOoycQBU04tYUZYm98STU5aH7wxatl0\nPpwkhy1BhEXKY3YLXm0vPBWxKHLHc1WLCW8sBLEn8QKBgQD87GKPr6v0xxEJRjHQ\nnZ1W09oQW3Q+Qf7wKaEhr/ysDoMPACum5wZWN7mExJ1Pgm+yN1H02lMEATJHYj2F\nbhoxAbO/YIyhaixIOnciPjlrHoF3Q1Ecp6qpN4qYSlO0+/QY2HSANF4gJq0rPWZk\nibF0S+aTABUnW8tllem7c1PpVwKBgQDRCcd4k4Yl80Kgit19UXE/2KMxK2ZHAncE\nY2QiZwYz0y4hsIkR93bt/fRx+f4jm4h+NlV+AGKcG+gSojvKTPFGeq5hw5blA10y\nbW8+aJCduihRV/Ok8oicuA9Eg6pDgSrAQu85GhCNMiJWUWCjYh1n3mV+PZOiuInC\niWbpPgevUQKBgFHHBJ88x7afXszG23h+Xc8jNJCxYUZ4BDwW2biQtHvVPV7uSS7v\n58acwelBwTNiE0dmR6OJq+nRkTYvd4Da9rD9weaRCydtst+vt7FkuR//fxDWvTUs\nqSuJf9B5x9Lu3B/kbNa/F+gBWWBvu9mqA6x8lhLVpgFR1tQDws0PHwSFaoGAX1Z4\ndVPDQRe7cYEkF33HivkBJPHISeaj5Yp3JwGZ4JUWWyMqwNj+kvjaPglokVDkZbve\nLgN69fv8UlNPtap1+FEHq2sLLRPls5QZwnrqSiWXMdJNOxOqnt+LhxIN24/TsbBV\nbtOmbN9KrdebnaioBLF31KW86eAEZIdKOmKiGqECgYBPTUUqwSt/XjhTAluZ0NGv\nE/RqthzazKCv7lbq93uNak3vUuxzFSFRq+FDe2mAI4Rcm3zHY81XSEC8MPZ8vgP4\nNSQEaf3jH8fai+20nj6Kzkg6dGARHtUoThPTOmde9cvONge2+qQBm2HUrpCwAxwH\nBn+wtsxmTo0MWADhgTwyaw==\n-----END PRIVATE KEY-----\n"
+};
+
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://boevik-1e8c3-default-rtdb.europe-west1.firebasedatabase.app/"
+  });
+}
+
+export const db = admin.database();
